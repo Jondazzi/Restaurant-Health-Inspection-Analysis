@@ -30,6 +30,9 @@ CREATE TABLE violations (
     violation_code VARCHAR(50),
     violation_description TEXT
 );
+ALTER TABLE inspections ADD COLUMN object_id INTEGER;
+ALTER TABLE violations ADD COLUMN points VARCHAR(25);
+ALTER TABLE violations DROP CONSTRAINT violations_serial_number_fkey;
 
 SELECT table_name 
 FROM information_schema.tables 
